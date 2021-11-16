@@ -58,8 +58,27 @@ public class controller {
                                      
                                 }
                                 break;
+                            case 5: //Modo telefono
+                                int opcionModetelefonoA = dis.menuModoTelefonoA();
+                                switch(opcionModetelefonoA){
+                                    case 1: 
+                                        dis.mostrarContactos();
+                                        break;
+                                    case 2:
+                                        dis.llamarContactos();
+                                        break;
+                                    case 3:
+                                        System.out.println("Se está llamando al contacto más reciente, por espere...");
+                                        break;
+                                    default:
+                                        dis.errorOpcion();
+                                        
+                                        
+                                }
+                                break;
+                                
                         }
-                        break;
+                        break;//break clase A
                     case 2://si se apaga
                         dis.enciendeloOtto();
                         break;

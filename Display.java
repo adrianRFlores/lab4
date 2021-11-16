@@ -53,13 +53,13 @@ public class Display {
         int opcion = intscanner.nextInt();
         switch(opcion){
             case 1://clase A
-                menuA();
+                
                 break;
             case 2://Clase C
-                menuC();
+                
                 break;
             case 3: //Clase S
-                menuS();
+                
                 break;
         }
         return opcion;
@@ -127,10 +127,12 @@ public class Display {
                 menuModoReproduccion();
                 break;
             case 5:
+                menuModoTelefonoA();
                 break;
             case 6:
                 break;
             case 7: 
+                menuTipoRadio();
                 break;
             default:
                 errorOpcion();
@@ -194,11 +196,11 @@ public class Display {
                 menuA();
                 break;
             case 3:
-                System.out.println("Guardar Estacion");
+                System.out.println("Estación Guardada");
                 menuA();
                 break;
             case 4:
-                System.out.println("Cargar Estacion");
+                System.out.println("Usted está escuchando la ultima estación (0.5)");
                 menuA();
                 break;
             case 5:
@@ -251,14 +253,24 @@ public class Display {
         System.out.println("---------------------------------------------\n"
                 + "|Bienvenido a modo Telefono A|\n"
                 + "Que accion deseas ejecutar?\n"
-                + "(1) Conectar/Desconectar\n"
-                + "(2) Mostrar Contactos\n"
-                + "(3) Llamar a Contacto\n"
-                + "(4) Llamar al ultimo contacto que se hablo\n"
-                + "(5) Finalizar Llamada\n"
+                + "(1) Mostrar Contactos\n"
+                + "(2) Llamar a Contacto\n"
+                + "(3) Llamar al ultimo contacto que se hablo\n"
                 + "---------------------------------------------"); 
         
         int opcion = intscanner.nextInt();
+        switch(opcion){
+            case 1:
+                mostrarContactos();
+                break;
+            case 2:
+                llamarContactos();
+            case 3:
+                System.out.println("Se está llamando al contacto más reciente, por espere...");
+                break;
+            default:
+                errorOpcion();
+        }
         return opcion;
     }
     
@@ -278,6 +290,50 @@ public class Display {
         return opcion;
     }
     
+    public int llamarContactos(){
+        System.out.println("(1) Javier Prado - 21486147\n"
+                + "(2) Keytyn Morente - 19757007\n"
+                + "(3) Natalia Flores - 38058873\n"
+                + "(4) Victoria Silvia - 48590427\n"
+                + "(5) Don juan(Mecanico) - 78308457\n");
+        int opcion = intscanner.nextInt();
+        switch(opcion){
+            case 1:
+                System.out.println("Llamando a Javier Prado...");
+                break;
+            case 2:
+                System.out.println("Llamando a Keytyn Morente...");
+                break;
+            case 3:
+                System.out.println("Llamando a Natalia Flores...");
+                break;
+            case 4:
+                System.out.println("Llamando a Victoria Silvia...");
+                break;
+            case 5:
+                System.out.println("Llamando a Don Juan(Mecanico)...");
+                break;
+            default:
+                errorOpcion();
+                break;
+             
+        }
+        return opcion;
+        
+        
+        
+    }
+    
+    public void mostrarContactos(){
+        System.out.println("(1) Javier Prado - 21486147\n"
+                + "(2) Keytyn Morente - 19757007\n"
+                + "(3) Natalia Flores - 38058873\n"
+                + "(4) Victoria Silvia - 48590427\n"
+                + "(5) Don juan(Mecanico) - 78308457\n");
+    }
+    
+    
+    
     public int menuModoTelefonoS(){
         
         System.out.println("---------------------------------------------\n"
@@ -295,16 +351,34 @@ public class Display {
     }
     
     
-    public int MenuModeTelefonoA(){
+    /*public int MenuModeTelefonoA(){
         System.out.println("Que desea realizar?\n"
                 + "(1) Conectar\n"
                 + "(2) Desconectar\n"
                 + "(3) Regresar");
         
+        
         int opcion = intscanner.nextInt();
+        
+        switch(opcion){
+            case 1:
+                telefonoEncendidoA();
+                break;
+            case 2: 
+                telefonoApagado();
+                break;
+            case 3:
+                menuA();
+                break;
+            default:
+                errorOpcion();
+        }
         return opcion;
-    }
+        
+        
+    }*/
     
+
     public int MenuModeTelefonoC(){
         System.out.println("Que desea realizar?\n"
                 + "(1) Conectar\n"
@@ -314,6 +388,28 @@ public class Display {
         int opcion = intscanner.nextInt();
         return opcion;
     }
+    
+    public void telefonoApagado(){
+        System.out.println("Se ha desconectado el modo telefono, encienadalo para ver las opciones");
+        menuA();
+    }
+    
+    public void telefonoEncendidoA(){
+        System.out.println("El modo telefono ha sido conectado");
+        
+    }
+    
+    public void telefonoEncendidoC(){
+        System.out.println("El modo telefono ha sido conectado");
+        
+    }
+    
+    public void telefonoEncendidoS(){
+        System.out.println("El modo telefono ha sido conectado");
+        
+    }
+    
+    
     
     public int MenuModeTelefonoS(){
         System.out.println("Que desea realizar?\n"
