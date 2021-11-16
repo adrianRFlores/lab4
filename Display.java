@@ -1,7 +1,17 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *
+ * Universidad del Valle de Guatemala
+ * Ingenieria en Ciencias de la computacion y TI
+ * Programacion Orientada a Objetos
+ * Integrantes:
+ * Javier Alejandro Prado Ramirez | 21486
+ * Adrián Ricardo Flores Trujillo | 21500
+ * Angel Gabriel Perez Figueroa | 21298
+ * Laboratorio #4
+ * 
+ * Funcionalidad - A traves de esta clase funciona la parte grafica del programa(menus), y todos los metodos que se utilizarán de las clases
+
+ *
  */
 
 
@@ -22,6 +32,7 @@ public class Display {
     mercedezBenz mb = new mercedezBenz();
     classA claseA = new classA();
     classC claseC = new classC();
+    classS claseS = new classS();
     
     public void inicio(){
         System.out.println("----------------------------------------");
@@ -65,7 +76,9 @@ public class Display {
         return opcion;
     }
     
-    // Menu para apagar y encender Radio
+    //--------------------------------------------------------------------------------------------
+    // Menus de encender y apagar radios
+    //--------------------------------------------------------------------------------------------
     public int menu_Apagar_EncenderA(){
         
         System.out.println("Que accion ejecutar?");
@@ -88,17 +101,58 @@ public class Display {
         return opcion;
         
     }
-    public int menu_Apagar_Encender(){
+    // Menu para apagar y encender Radio
+    public int menu_Apagar_EncenderC(){
         
         System.out.println("Que accion ejecutar?");
         System.out.println("(1) Encender Radio\n"
                 + "(2) Apagar Radio");
         int opcion = intscanner.nextInt();
+        switch(opcion){
+            case 1:
+                Encendido();
+                menuC();
+                break;
+            case 2:
+                Apagado();
+                menuTipoRadio();
+                break;
+            default:
+                errorOpcion();
+                break;
+        }
         return opcion;
+        
+    }
+    // Menu para apagar y encender Radio
+    public int menu_Apagar_EncenderS(){
+        
+        System.out.println("Que accion ejecutar?");
+        System.out.println("(1) Encender Radio\n"
+                + "(2) Apagar Radio");
+        int opcion = intscanner.nextInt();
+        switch(opcion){
+            case 1:
+                Encendido();
+                menuS();
+                break;
+            case 2:
+                Apagado();
+                menuTipoRadio();
+                break;
+            default:
+                errorOpcion();
+                break;
+        }
+        return opcion;
+        
     }
     
     
     
+    //--------------------------------------------------------------------------------------------
+    // Menus principales de las clases Hijas
+    //--------------------------------------------------------------------------------------------
     
     public int menuA(){
         System.out.println("---------------------------------------------\n"
@@ -141,6 +195,7 @@ public class Display {
         return opcion;
     }
     
+    
     public int menuC(){
         System.out.println("---------------------------------------------\n"
                 + "|Bievenido al menu de Radio Clase 'C'|\n"
@@ -154,6 +209,31 @@ public class Display {
                 + "(7) Salir\n"
                 + "---------------------------------------------");
         int opcion = intscanner.nextInt();
+        switch(opcion){
+            case 1:
+                menu_Apagar_EncenderC();
+                break;
+            case 2:
+                volumenNivelC();
+                break;
+            case 3:
+                menuModoRadio();
+                break;
+            case 4:
+                menuModoReproduccion();
+                break;
+            case 5:
+                menuModoTelefonoC();
+                break;
+            case 6:
+                break;
+            case 7: 
+                menuTipoRadio();
+                break;
+            default:
+                errorOpcion();
+                break;
+        }
         return opcion;
     }
     
@@ -171,12 +251,42 @@ public class Display {
                 + "---------------------------------------------");
         
         int opcion = intscanner.nextInt();
+        switch(opcion){
+            case 1:
+                menu_Apagar_EncenderS();
+                break;
+            case 2:
+                volumenNivelS();
+                break;
+            case 3:
+                menuModoRadio();
+                break;
+            case 4:
+                menuModoReproduccion();
+                break;
+            case 5:
+                menuModoTelefonoS();
+                break;
+            case 6:
+                break;
+            case 7: 
+                menuTipoRadio();
+                break;
+            default:
+                errorOpcion();
+                break;
+        }
         return opcion;
     }
     
+    
+    
+    //--------------------------------------------------------------------------------------------
+    // Menu modo radio Opciones
+    //--------------------------------------------------------------------------------------------
     public int menuModoRadio(){
         System.out.println("---------------------------------------------\n"
-                + "|Bienvenido a modo Radio|\n"
+                + "|Bienvenido a modo Radio A|\n"
                 + "Que accion deseas ejecutar?\n"
                 + "(1) Cambiar de FM a AM\n"
                 + "(2) Cambiar Emisora\n"
@@ -214,10 +324,95 @@ public class Display {
         return opcion;
     }
     
+    public int menuModoRadioC(){
+        System.out.println("---------------------------------------------\n"
+                + "|Bienvenido a modo Radio C|\n"
+                + "Que accion deseas ejecutar?\n"
+                + "(1) Cambiar de FM a AM\n"
+                + "(2) Cambiar Emisora\n"
+                + "(3) Guardar Emisora\n"
+                + "(4) Cargar Emisoras\n"
+                + "(5) Regresar\n"
+                + "---------------------------------------------"); 
+        
+        int opcion = intscanner.nextInt();
+        switch(opcion){
+            case 1:
+                FMAM();
+                menuC();
+                break;
+            case 2:
+                cambiarEmisora();
+                menuC();
+                break;
+            case 3:
+                System.out.println("Estación Guardada");
+                menuC();
+                break;
+            case 4:
+                System.out.println("Usted está escuchando la ultima estación (0.5)");
+                menuC();
+                break;
+            case 5:
+                menuC();
+                break;
+            default:
+                errorOpcion();
+                break;
+            
+        }
+        return opcion;
+    }
+    
+    public int menuModoRadioS(){
+        System.out.println("---------------------------------------------\n"
+                + "|Bienvenido a modo Radio S|\n"
+                + "Que accion deseas ejecutar?\n"
+                + "(1) Cambiar de FM a AM\n"
+                + "(2) Cambiar Emisora\n"
+                + "(3) Guardar Emisora\n"
+                + "(4) Cargar Emisoras\n"
+                + "(5) Regresar\n"
+                + "---------------------------------------------"); 
+        
+        int opcion = intscanner.nextInt();
+        switch(opcion){
+            case 1:
+                FMAM();
+                menuS();
+                break;
+            case 2:
+                cambiarEmisora();
+                menuS();
+                break;
+            case 3:
+                System.out.println("Estación Guardada");
+                menuS();
+                break;
+            case 4:
+                System.out.println("Usted está escuchando la ultima estación (0.5)");
+                menuS();
+                break;
+            case 5:
+                menuS();
+                break;
+            default:
+                errorOpcion();
+                break;
+            
+        }
+        return opcion;
+    }
+    
+    
+    
+    //--------------------------------------------------------------------------------------------
+    // Menus de Reproduccion
+    //--------------------------------------------------------------------------------------------
     public int menuModoReproduccion(){
         
         System.out.println("---------------------------------------------\n"
-                + "|Bienvenido a modo Reproduccion|\n"
+                + "|Bienvenido a modo Reproduccion A|\n"
                 + "Que accion deseas ejecutar?\n"
                 + "(1) Seleccionar PlayList\n"
                 + "(2) Cambiar Cancion\n"
@@ -247,7 +442,74 @@ public class Display {
         
     }
     
+    public int menuModoReproduccionC(){
+        
+        System.out.println("---------------------------------------------\n"
+                + "|Bienvenido a modo Reproduccion C|\n"
+                + "Que accion deseas ejecutar?\n"
+                + "(1) Seleccionar PlayList\n"
+                + "(2) Cambiar Cancion\n"
+                + "(3) Regresar\n"
+                + "---------------------------------------------"); 
+        int opcion = intscanner.nextInt();
+        switch(opcion){
+            case 1:
+                seleccionarPlaylist();
+                menuC();
+                break;
+            case 2:
+                seleccionarCancion();
+                menuC();
+                break;
+          
+            case 3:
+                menuC();
+                break;
+            default:
+                errorOpcion();
+                break;
+        }
+        
+        return opcion;
+        
+    }
     
+    public int menuModoReproduccionS(){
+        
+        System.out.println("---------------------------------------------\n"
+                + "|Bienvenido a modo Reproduccion S|\n"
+                + "Que accion deseas ejecutar?\n"
+                + "(1) Seleccionar PlayList\n"
+                + "(2) Cambiar Cancion\n"
+                + "(3) Regresar\n"
+                + "---------------------------------------------"); 
+        int opcion = intscanner.nextInt();
+        switch(opcion){
+            case 1:
+                seleccionarPlaylist();
+                menuS();
+                break;
+            case 2:
+                seleccionarCancion();
+                menuS();
+                break;
+          
+            case 3:
+                menuS();
+                break;
+            default:
+                errorOpcion();
+                break;
+        }
+        
+        return opcion;
+         
+    }
+    
+    
+    //--------------------------------------------------------------------------------------------
+    // Menus de modo Telefono
+    //--------------------------------------------------------------------------------------------
     public int menuModoTelefonoA(){
         
         System.out.println("---------------------------------------------\n"
@@ -266,7 +528,7 @@ public class Display {
             case 2:
                 llamarContactos();
             case 3:
-                System.out.println("Se está llamando al contacto más reciente, por espere...");
+                claseA.llamarUltimo();
                 break;
             default:
                 errorOpcion();
@@ -279,16 +541,57 @@ public class Display {
         System.out.println("---------------------------------------------\n"
                 + "|Bienvenido a modo Telefono C|\n"
                 + "Que accion deseas ejecutar?\n"
-                + "(1) Conectar/Desconectar\n"
-                + "(2) Mostrar Contactos\n"
-                + "(3) Llamar a Contacto\n"
-                + "(4) Cambiar a llamada modo espera\n"
-                + "(5) Finalizar Llamada\n"
+                + "(1) Mostrar Contactos\n"
+                + "(2) Llamar a Contacto\n"
+                + "(3) Cambiar a llamada modo espera\n"
                 + "---------------------------------------------"); 
         
         int opcion = intscanner.nextInt();
+        switch(opcion){
+            case 1:
+                mostrarContactos();
+                break;
+            case 2:
+                llamarContactos();
+            case 3:
+                claseC.llamadaEspera();
+                break;
+            default:
+                errorOpcion();
+        }
         return opcion;
     }
+    
+    public int menuModoTelefonoS(){
+        
+        System.out.println("---------------------------------------------\n"
+                + "|Bienvenido a modo Telefono S|\n"
+                + "Que accion deseas ejecutar?\n"
+                + "(1) Mostrar Contactos\n"
+                + "(2) Llamar a Contacto\n"
+                + "(3) Cambiar bocinas por auriculares\n"
+                + "---------------------------------------------"); 
+        
+        int opcion = intscanner.nextInt();
+        switch(opcion){
+            case 1:
+                mostrarContactos();
+                break;
+            case 2:
+                llamarContactos();
+            case 3:
+                claseS.bocinasAaudifonos();
+                break;
+            default:
+                errorOpcion();
+        }
+        return opcion;
+    }
+    
+    
+    //--------------------------------------------------------------------------------------------
+    // Menu de llamar Contactos general
+    //--------------------------------------------------------------------------------------------
     
     public int llamarContactos(){
         System.out.println("(1) Javier Prado - 21486147\n"
@@ -319,11 +622,13 @@ public class Display {
              
         }
         return opcion;
-        
-        
-        
+         
     }
     
+    
+    //--------------------------------------------------------------------------------------------
+    // Menu de mostrar Contactos general
+    //--------------------------------------------------------------------------------------------
     public void mostrarContactos(){
         System.out.println("(1) Javier Prado - 21486147\n"
                 + "(2) Keytyn Morente - 19757007\n"
@@ -332,68 +637,27 @@ public class Display {
                 + "(5) Don juan(Mecanico) - 78308457\n");
     }
     
-    
-    
-    public int menuModoTelefonoS(){
-        
-        System.out.println("---------------------------------------------\n"
-                + "|Bienvenido a modo Telefono S|\n"
-                + "Que accion deseas ejecutar?\n"
-                + "(1) Conectar/Desconectar\n"
-                + "(2) Mostrar Contactos\n"
-                + "(3) Llamar a Contacto\n"
-                + "(4) Cmabiar a bocinas o auriculares\n"
-                + "(5) Finalizar Llamada\n"
-                + "---------------------------------------------"); 
-        
-        int opcion = intscanner.nextInt();
-        return opcion;
-    }
-    
-    
-    /*public int MenuModeTelefonoA(){
-        System.out.println("Que desea realizar?\n"
-                + "(1) Conectar\n"
-                + "(2) Desconectar\n"
-                + "(3) Regresar");
-        
-        
-        int opcion = intscanner.nextInt();
-        
-        switch(opcion){
-            case 1:
-                telefonoEncendidoA();
-                break;
-            case 2: 
-                telefonoApagado();
-                break;
-            case 3:
-                menuA();
-                break;
-            default:
-                errorOpcion();
-        }
-        return opcion;
-        
-        
-    }*/
-    
 
-    public int MenuModeTelefonoC(){
-        System.out.println("Que desea realizar?\n"
-                + "(1) Conectar\n"
-                + "(2) Desconectar\n"
-                + "(3) Regresar");
-        
-        int opcion = intscanner.nextInt();
-        return opcion;
-    }
-    
+    //--------------------------------------------------------------------------------------------
+    // Telefonos desconectados
+    //--------------------------------------------------------------------------------------------
     public void telefonoApagado(){
-        System.out.println("Se ha desconectado el modo telefono, encienadalo para ver las opciones");
+        System.out.println("Se ha desconectado el modo telefono A, encienadalo para ver las opciones");
         menuA();
     }
     
+    public void telefonoApagadoC(){
+        System.out.println("Se ha desconectado el modo telefono C, encienadalo para ver las opciones");
+        menuC();
+    }
+    public void telefonoApagadoS(){
+        System.out.println("Se ha desconectado el modo telefono S, encienadalo para ver las opciones");
+        menuS();
+    }
+    
+    //--------------------------------------------------------------------------------------------
+    // Telefonos conectados
+    //--------------------------------------------------------------------------------------------
     public void telefonoEncendidoA(){
         System.out.println("El modo telefono ha sido conectado");
         
@@ -410,19 +674,9 @@ public class Display {
     }
     
     
-    
-    public int MenuModeTelefonoS(){
-        System.out.println("Que desea realizar?\n"
-                + "(1) Conectar\n"
-                + "(2) Desconectar\n"
-                + "(3) Regresar");
-        
-        int opcion = intscanner.nextInt();
-        return opcion;
-    }
-    
-    
-    
+    //--------------------------------------------------------------------------------------------
+    // menus de modo Productividad
+    //--------------------------------------------------------------------------------------------
     public int menuModoProductividadA(){
         System.out.println("|Modo Productividad A|\n"
                 + "Que desea realizar?\n"
@@ -453,11 +707,20 @@ public class Display {
         return opcion;
     }
     
+    
+    
+    //--------------------------------------------------------------------------------------------
+    // Mansajes de error
+    //--------------------------------------------------------------------------------------------
     public void errorOpcion(){
         
         System.out.println("Escogio una opcion incorrecta Intente de nuevo");
         
     }
+    
+    //--------------------------------------------------------------------------------------------
+    // Nombres de tipos de radio
+    //--------------------------------------------------------------------------------------------
     public void radioA(){
         System.out.println("Radio Tipo A");
     }
@@ -468,6 +731,11 @@ public class Display {
     public void radioS(){
         System.out.println("Radio Tipo S");
     }
+    
+    
+    //--------------------------------------------------------------------------------------------
+    // Volumenes de Radio
+    //--------------------------------------------------------------------------------------------
     
     public int volumenNivelA(){
         System.out.println("Que desea hacer con el volumen?");
@@ -489,9 +757,58 @@ public class Display {
         return opcion;
     }
     
+    public int volumenNivelC(){
+        System.out.println("Que desea hacer con el volumen?");
+        System.out.println("(1) Subir Volumen\n"
+                + "(2) bajar volumen\n");
+        int opcion = intscanner.nextInt();
+        switch(opcion){
+            case 1:
+                claseC.setVolumenup();
+                claseC.info();
+                break;
+            case 2:
+                claseC.setVolumendown();
+                claseC.info();
+                break;
+                
+               
+        }
+        return opcion;
+    }
+    
+    public int volumenNivelS(){
+        System.out.println("Que desea hacer con el volumen?");
+        System.out.println("(1) Subir Volumen\n"
+                + "(2) bajar volumen\n");
+        int opcion = intscanner.nextInt();
+        switch(opcion){
+            case 1:
+                claseS.setVolumenup();
+                claseS.info();
+                break;
+            case 2:
+                claseS.setVolumendown();
+                claseS.info();
+                break;
+                
+               
+        }
+        return opcion;
+    }
+    
+    
+    //--------------------------------------------------------------------------------------------
+    // Radio encendido general
+    //--------------------------------------------------------------------------------------------
     public void Encendido(){
         System.out.println("El radio esta encendido");
     }
+    
+    
+    //--------------------------------------------------------------------------------------------
+    // radio apagador general
+    //--------------------------------------------------------------------------------------------
     public void Apagado(){
         System.out.println("El radio esta apagado");
     }
@@ -535,9 +852,21 @@ public class Display {
         System.out.println("AM activado");
     }
     
+    //--------------------------------------------------------------------------------------------
+    // emisoras- cambios
+    //--------------------------------------------------------------------------------------------
     public void cambiarEmisora(){
         claseA.setEstacion();
         claseA.estacionmostrar();
+    }
+    
+    public void cambiarEmisoraC(){
+        claseC.setEstacion();
+        claseC.estacionmostrar();
+    }
+    public void cambiarEmisoraS(){
+        claseS.setEstacion();
+        claseS.estacionmostrar();
     }
     
     public void seleccionarCancion(){

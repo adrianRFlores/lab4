@@ -1,12 +1,19 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ *
+ * Universidad del Valle de Guatemala
+ * Ingenieria en Ciencias de la computacion y TI
+ * Programacion Orientada a Objetos
+ * Integrantes:
+ * Javier Alejandro Prado Ramirez | 21486
+ * Adrián Ricardo Flores Trujillo | 21500
+ * Angel Gabriel Perez Figueroa | 21298
+ * Laboratorio #4
+ * 
+ * Funcionalidad - Tiene el control sobre todo el sistema, a travss de este se lleva el manejo del programa
+
+ *
  */
 
-/**
- *
- * @author HP
- */
 public class main {
 
     /**
