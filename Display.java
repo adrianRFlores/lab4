@@ -184,6 +184,7 @@ public class Display {
                 menuModoTelefonoA();
                 break;
             case 6:
+                menuModoProductividadA();
                 break;
             case 7: 
                 menuTipoRadio();
@@ -226,6 +227,7 @@ public class Display {
                 menuModoTelefonoC();
                 break;
             case 6:
+                menuModoProductividadC();
                 break;
             case 7: 
                 menuTipoRadio();
@@ -268,6 +270,7 @@ public class Display {
                 menuModoTelefonoS();
                 break;
             case 6:
+                menuModoProductividadS();
                 break;
             case 7: 
                 menuTipoRadio();
@@ -684,6 +687,18 @@ public class Display {
                 + "(2) regresar");
         
         int opcion = intscanner.nextInt();
+        switch(opcion){
+            case 1:
+                claseA.tarjetasPresentacion();
+                break;
+            case 2:
+                menuC();
+            default:
+                errorOpcion();
+                break;
+        }
+        
+        
         return opcion;
     }
     
@@ -694,6 +709,17 @@ public class Display {
                 + "(2) regresar");
         
         int opcion = intscanner.nextInt();
+        switch(opcion){
+            case 1:
+                claseC.pronosticoTiempo();
+                break;
+            case 2:
+                menuC();
+            default:
+                errorOpcion();
+                break;
+                
+        }
         return opcion;
     }
     
@@ -704,6 +730,17 @@ public class Display {
                 + "(2) regresar");
         
         int opcion = intscanner.nextInt();
+        switch(opcion){
+            case 1:
+                claseS.viajes();
+                break;
+            case 2:
+                menuS();
+                break;
+            default:
+                errorOpcion();
+        }
+        
         return opcion;
     }
     

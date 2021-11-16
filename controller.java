@@ -229,6 +229,15 @@ public class controller {
                                         
                                 }
                                 break;
+                            case 6:
+                                int opcionModeProductividadS = dis.menuModoProductividadS();
+                                switch(opcionModeProductividadS){
+                                    
+                                }
+                                break;
+                            case 7:
+                                dis.menuTipoRadio();
+                                break;
                                 
                         }
                         break;//break clase A

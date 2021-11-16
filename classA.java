@@ -20,17 +20,16 @@ public class classA extends mercedezBenz implements Radio{
     }
 
     @Override
-    public String pronosticoTiempo() {
+    public void pronosticoTiempo() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public String tarjetasPresentacion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void tarjetasPresentacion() {
+        System.out.println("*mostrando tarjeta de presentacion");    }
 
     @Override
-    public String viajes() {
+    public void viajes() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

@@ -20,17 +20,17 @@ public class classC extends mercedezBenz implements Radio{
     }
 
     @Override
-    public String pronosticoTiempo() {
+    public void pronosticoTiempo() {
+        System.out.println("El tiempo esta a 24 grados el dia de hoy");    
+    }
+
+    @Override
+    public void tarjetasPresentacion() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public String tarjetasPresentacion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String viajes() {
+    public void viajes() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

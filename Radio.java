@@ -20,21 +20,21 @@ interface Radio{
 	 * 
 	 * @return string con el pronostico del tiempo
 	 */
-	public String pronosticoTiempo();
+	public void pronosticoTiempo();
 
 	/**
 	 * Devuelve el contenido de una tarjeta de presentación
 	 * 
 	 * @return una tarjeta de presentación
 	 */
-	public String tarjetasPresentacion();
+	public void tarjetasPresentacion();
 
 	/**
 	 * Devuelve el planeo de viajes
 	 * 
 	 * @return los viajes
 	 */
-	public String viajes();
+	public void viajes();
 
 	/**
 	 * Devuelve la llamada en espera y cambia de llamada
