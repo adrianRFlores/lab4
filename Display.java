@@ -707,7 +707,14 @@ public class Display {
         return opcion;
     }
     
-    
+    public void tarjetaPresentacion(){
+        System.out.println("Mostrando vista previa de tarjeta de presentacion: ");
+        System.out.println("////////////////////////////////////////////////////");
+        System.out.println("<INSERTAR NOMBRE>");
+        System.out.println("<INSERTAR PROFESION>");
+        System.out.println("<INSERTAR NUMERO DE TELEFONO>");
+        System.out.println("////////////////////////////////////////////////////");
+    }
     
     //--------------------------------------------------------------------------------------------
     // Mansajes de error

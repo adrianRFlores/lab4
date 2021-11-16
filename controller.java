@@ -81,6 +81,17 @@ public class controller {
                                         
                                 }
                                 break;
+
+                            case 6: //Modo Productividad
+                                switch(dis.menuModoProductividadA()){
+                                    case 1:
+                                        dis.tarjetaPresentacion();
+                                        break;
+                                    case 2:
+                                        break;
+                                    default:
+                                        dis.errorOpcion();
+                                }
                                 
                         }
                         break;//break clase A
@@ -153,6 +164,15 @@ public class controller {
                                         
                                 }
                                 break;
+
+                            case 6: //Modo productividad
+                                switch(dis.menuModoProductividadC()){
+                                    case 1:
+                                        System.out.println("Mosrando pronostico del tiempo...");
+                                        break;
+                                    case 2:
+                                        break;
+                                }
                                 
                         }
                         break;//break clase A
@@ -229,6 +249,17 @@ public class controller {
                                         
                                 }
                                 break;
+
+                            case 6: //Modo productividad
+                                switch(dis.menuModoProductividadS()){
+                                    case 1:
+                                        System.out.println("Planificando trayectoria de viajes, porfavor espere...");
+                                        break;
+                                    case 2:
+                                        break;
+                                    default:
+                                        dis.errorOpcion();
+                                }
                                 
                         }
                         break;//break clase A
