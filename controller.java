@@ -1,15 +1,20 @@
-
-
-
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ *
+ * Universidad del Valle de Guatemala
+ * Ingenieria en Ciencias de la computacion y TI
+ * Programacion Orientada a Objetos
+ * Integrantes:
+ * Javier Alejandro Prado Ramirez | 21486
+ * Adrián Ricardo Flores Trujillo | 21500
+ * Angel Gabriel Perez Figueroa | 21298
+ * Laboratorio #4
+ * 
+ * Funcionalidad - Es el esqueleto del sustema, solo que por cuestiones didacticas se separaran de esta manera para que pueda ser mejor su comprension
+
+ *
  */
 
-/**
- *
- * @author HP
- */
+
 public class controller {
     boolean stop = false;
     Display dis = new Display();
@@ -41,10 +46,10 @@ public class controller {
                                         dis.cambiarEmisora();
                                         break;
                                     case 3://guardar estacion
-                                        System.out.println("Guardando Emisora");
+                                        System.out.println("Guardando Emisora...");
                                         break;
                                     case 4://cargar estacion
-                                        System.out.println("Cargando Emisora");
+                                        System.out.println("Cargando Emisora Guardada...");
                                         break;
                                     default:
                                         dis.errorOpcion();
@@ -88,13 +93,161 @@ public class controller {
                         
                 }
                 
+                
                 break;
             case 2://Radio clase C
                 dis.menuC();
+                int encender2 = dis.menu_Apagar_EncenderC();
+                   switch(encender2){
+                    case 1://si se enciende
+                        int opcionC = dis.menuC();
+                        switch(opcionC){
+                            case 1:
+                                dis.menu_Apagar_EncenderC();//menu apagar C
+                                break;
+                            case 2:
+                                dis.volumenNivelC();//volumen de radio C
+                                break;
+                            case 3://modo radio C
+                                int modeRadioC = dis.menuModoRadioC();
+                                switch(modeRadioC){
+                                    case 1: //cambiar de FM a AM
+                                        dis.FMAM();
+                                        break;
+                                    case 2://cambiar estacion
+                                        dis.cambiarEmisoraC();
+                                        break;
+                                    case 3://guardar estacion
+                                        System.out.println("Guardando Emisora...");
+                                        break;
+                                    case 4://cargar estacion
+                                        System.out.println("Cargando Emisora Guardada...");
+                                        break;
+                                    default:
+                                        dis.errorOpcion();
+                                        break;   
+                                }
+                                break;
+                            case 4://modo reproduccion
+                                int opcionRe = dis.menuModoReproduccionC();
+                                
+                                switch(opcionRe){
+                                     
+                                }
+                                break;
+                            case 5: //Modo telefono
+                                int opcionModetelefonoC = dis.menuModoTelefonoC();
+                                switch(opcionModetelefonoC){
+                                    case 1: 
+                                        dis.mostrarContactos();
+                                        break;
+                                    case 2:
+                                        dis.llamarContactos();
+                                        break;
+                                    case 3:
+                                        
+                                        break;
+                                    default:
+                                        dis.errorOpcion();
+                                        
+                                        
+                                }
+                                break;
+                                
+                        }
+                        break;//break clase A
+                    case 2://si se apaga
+                        dis.enciendeloOtto();
+                        break;
+                    default:
+                        dis.errorOpcion();
+                        break;
+                        
+                }
                 break;
+                
+                
+                
+                
+                
+                
             case 3://Radio clase S
                 dis.menuS();
+                int encender3 = dis.menu_Apagar_EncenderS();
+                   switch(encender3){
+                    case 1://si se enciende
+                        int opcionS = dis.menuS();
+                        switch(opcionS){
+                            case 1:
+                                dis.menu_Apagar_EncenderS();//menu apagar S
+                                break;
+                            case 2:
+                                dis.volumenNivelS();//volumen de radio S
+                                break;
+                            case 3://modo radio S
+                                int modeRadioS = dis.menuModoRadioS();
+                                switch(modeRadioS){
+                                    case 1: //cambiar de FM a AM
+                                        dis.FMAM();
+                                        break;
+                                    case 2://cambiar estacion
+                                        dis.cambiarEmisoraS();
+                                        break;
+                                    case 3://guardar estacion
+                                        System.out.println("Guardando Emisora...");
+                                        break;
+                                    case 4://cargar estacion
+                                        System.out.println("Cargando Emisora Guardada...");
+                                        break;
+                                    default:
+                                        dis.errorOpcion();
+                                        break;   
+                                }
+                                break;
+                            case 4://modo reproduccion
+                                int opcionRe = dis.menuModoReproduccionS();
+                                
+                                switch(opcionRe){
+                                     
+                                }
+                                break;
+                            case 5: //Modo telefono
+                                int opcionModetelefonoS = dis.menuModoTelefonoS();
+                                switch(opcionModetelefonoS){
+                                    case 1: 
+                                        dis.mostrarContactos();
+                                        break;
+                                    case 2:
+                                        dis.llamarContactos();
+                                        break;
+                                    case 3:
+                                        
+                                        break;
+                                    default:
+                                        dis.errorOpcion();
+                                        
+                                        
+                                }
+                                break;
+                                
+                        }
+                        break;//break clase A
+                    case 2://si se apaga
+                        dis.enciendeloOtto();
+                        break;
+                    default:
+                        dis.errorOpcion();
+                        break;
+                        
+                }
                 break;
+                
+                
+                
+                
+                
+                
+                
             case 4://salir
                 stop = true;
                 dis.goodbye();

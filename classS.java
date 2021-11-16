@@ -9,13 +9,13 @@
  * Angel Gabriel Perez Figueroa | 21298
  * Laboratorio #4
  * 
- * Funcionalidad - clase hija de la clase mercedesBenz, es decir muestra las propiedades del radio clase A que el usuario puede utilizar
+ * Funcionalidad - clase hija de la clase mercedesBenz, es decir muestra las propiedades del radio clase S que el usuario puede utilizar
 
  *
  */
 
-public class classA extends mercedezBenz implements Radio{
-    public classA(){
+public class classS extends mercedezBenz implements Radio{
+    public classS(){
         
     }
 
@@ -41,12 +41,12 @@ public class classA extends mercedezBenz implements Radio{
 
     @Override
     public void llamarUltimo() {
-        System.out.println("Se está llamando al contacto más reciente, por favor espere...");
-        
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void bocinasAaudifonos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Se está cambiando bocinas por auriculares...");
+        
     }
 }
